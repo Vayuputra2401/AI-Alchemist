@@ -15,9 +15,9 @@ const Featured = () => {
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>Where Innovation Meets Algorithms: Your Hub for Machine Learning and Development Insights.</h1>
           <p className={styles.postDesc}>
-          "Welcome to our vibrant community where machine learning and development converge to shape the future. 
+          Welcome to our vibrant community where machine learning and development converge to shape the future. 
           Embark on a journey with us as we decode the intricacies of code, unravel the secrets of algorithms, 
-          and explore the boundless possibilities of technology."
+          and explore the boundless possibilities of technology.
           </p>
           <button className={styles.button}>Read More</button>
         </div>
