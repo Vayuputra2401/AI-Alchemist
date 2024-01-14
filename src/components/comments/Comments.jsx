@@ -27,11 +27,11 @@ const Comments = ({ postSlug }) => {
  // `http://localhost:3000/api/comments?postSlug=${postSlug}`,
 //  fetcher
 //);
- const apiUrl = process.env.API_URL || "https://ai-alchemist.vercel.app/api/comments";
- const { data, mutate, isLoading } = useSWR(
-  `<span class="math-inline">\{apiUrl\}?postSlug\=</span>{postSlug}`,
+  const apiUrl = process.env.API_URL ;
+const { data, mutate, isLoading } = useSWR(
+  `${apiUrl}?postSlug=${postSlug}`,
   fetcher
- );
+);
 
   const [desc, setDesc] = useState("");
 
