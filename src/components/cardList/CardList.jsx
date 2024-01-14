@@ -4,14 +4,22 @@ import Pagination from "../pagination/Pagination";
 import Image from "next/image";
 import Card from "../card/Card";
 
+//const getData = async (page, cat) => {
+// const res = await fetch(
+//  `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
+// {
+//    cache: "no-store",
+//  }
+// );
 const getData = async (page, cat) => {
+  const apiUrl = process.env.API_URL || "https://ai-alchemist.vercel.app/api/posts"; // Use environment variable for API URL
   const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
+    `${apiUrl}?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }
   );
-
+  
   if (!res.ok) {
     throw new Error("Failed");
   }
