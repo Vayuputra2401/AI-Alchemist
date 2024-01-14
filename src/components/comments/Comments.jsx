@@ -23,10 +23,15 @@ const fetcher = async (url) => {
 const Comments = ({ postSlug }) => {
   const { status } = useSession();
 
-  const { data, mutate, isLoading } = useSWR(
-    `http://localhost:3000/api/comments?postSlug=${postSlug}`,
-    fetcher
-  );
+  //const { data, mutate, isLoading } = useSWR(
+ // `http://localhost:3000/api/comments?postSlug=${postSlug}`,
+//  fetcher
+//);
+ const apiUrl = process.env.API_URL || "https://ai-alchemist.vercel.app/api/comments";
+ const { data, mutate, isLoading } = useSWR(
+  `<span class="math-inline">\{apiUrl\}?postSlug\=</span>{postSlug}`,
+  fetcher
+ );
 
   const [desc, setDesc] = useState("");
 
